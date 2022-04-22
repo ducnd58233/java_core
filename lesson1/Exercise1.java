@@ -8,6 +8,12 @@ public class Exercise1 {
     System.out.print("Enter year: ");
     int year = sc.nextInt();
 
+    while (year < 0) {
+      System.out.println("Invalid year. Year need >= 0");
+      System.out.print("Enter year: ");
+      year = sc.nextInt();
+    }
+
     if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
       System.out.printf("%d is a leap year.", year);
     } else {

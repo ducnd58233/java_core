@@ -8,10 +8,18 @@ public class Exercise3 {
     System.out.println("Enter number has 3 digits: ");
     int n = sc.nextInt();
 
-    int lastDigit = n % 10;
-    int midDigit = (n % 100) / 10;
     int firstDigit = n / 100;
     String res = "";
+
+    while (firstDigit == 0) {
+      System.out.println("Unvalid 3 digits number. Enter again!");
+      System.out.println("Enter number has 3 digits: ");
+      n = sc.nextInt();
+      firstDigit = n / 100;
+    }
+
+    int lastDigit = n % 10;
+    int midDigit = (n % 100) / 10;
 
     switch (firstDigit) {
       case 1:
@@ -73,13 +81,19 @@ public class Exercise3 {
         res += "Chin ";
         break;
       default:
+        if (midDigit == 0 && lastDigit != 0) {
+          res += "Linh ";
+        }
         break;
     }
 
     if (midDigit == 1 && lastDigit == 0) {
       res += "Muoi";
     } else {
-      res += "Muoi ";
+      if (midDigit != 0 && lastDigit != 0) {
+        res += "Muoi ";
+      }
+
       switch (lastDigit) {
         case 1:
           res += "Mot";

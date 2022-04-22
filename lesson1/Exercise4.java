@@ -8,6 +8,11 @@ public class Exercise4 {
     System.out.println("ax^2 + bx + c = 0");
     System.out.print("Nhap a: ");
     int a = sc.nextInt();
+    while ( a == 0 ) {
+      System.out.println("Phuong trinh khong hop le. a != 0");
+      System.out.print("Nhap a: ");
+      a = sc.nextInt();
+    }
     System.out.print("Nhap b: ");
     int b = sc.nextInt();
     System.out.print("Nhap c: ");
